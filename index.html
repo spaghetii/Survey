@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="The Game Survey">
+    <meta name="keywords" content="Unity,C#,AVG,interdisciplinary">
+    <meta name="author" content="Ming-Jie Sun">
+    <title> 烤魚戰士遊玩滿意度調查 </title>
+    <link rel="icon" href="image/Icon.png" type=" image/gif" sizes="16x16">
+    <style type="text/css">
+        body {
+            background-image: url("image/BG.png ");
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-size: 20%;
+            margin-right: 200px;
+            background-attachment: fixed;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HTML5 新增了許多 <input> 的型態，請使用這些type，設計一份問卷 -->
+    <!-- http://www.w3schools.com/html/html_form_input_types.asp -->
+
+    <!-- 如果不知道該怎麼下手，請參考這個網站所設計的情境問卷找靈感 -->
+    <!-- https://technews.tw/2018/10/18/surveycake-situation-list/ -->
+
+    <!-- 底下是作業需要包含的項目 -->
+    <!-- 1. 問卷需包含 5-7 個問題 -->
+    <!-- 2. type 挑選時，請盡量不重複 -->
+    <!-- 3. 挑選 至少 1 個問題，設置 pattern 檢核 -->
+
+    <!-- <img src="image/BG.png " alt="" width="360px" height="510px" class="test"> -->
+
+    <h2> 滿意度調查 </h2>
+
+    <p>
+        <span style="color: red">＊</span>
+        <label for="user_name">姓名(暱稱)：</label>
+        <input type="text" name="user_name" id="user_name">
+    </p>
+
+    <p>
+        <label>性別：</label>
+        <p>
+            <input type="radio" name="gender" id="man">
+            <label for="man">男 </label>
+            <input type="radio" name="gender" id="woman">
+            <label for="woman">女 </label>
+            <input type="radio" name="gender" id="other">
+            <label for="other">其他</label>
+        </p>
+    </p>
+
+    <p>
+        <label for="fill_out_date">填寫日期：</label>
+        <input type="date" name="fill_out_date" id="fill_out_date" min="2019-07-15" value="2019-07-15">
+    </p>
+
+    <p>
+        <span style="color: red">＊</span> <label>第一題:是否遊玩過本遊戲?</label>
+        <p>
+            <input type="radio" name="Q1" id="yes">
+            <label for="yes">是 </label>
+            <input type="radio" name="Q1" id="no">
+            <label for="no">否</label>
+            <a href="#introduce"> (點我跳轉到介紹) </a>
+        </p>
+    </p>
+
+
+    <p>
+        <label>第二題:請問您曾經玩過的遊戲類型(可複選)</label>
+        <p>
+            <input type="checkbox" name="Q2" id="ACT">
+            <label for="yes">動作遊戲(ACT) </label>
+            <input type="checkbox" name="Q2" id="AVG">
+            <label for="yes">冒險遊戲(AVG) </label>
+            <input type="checkbox" name="Q2" id="RTS">
+            <label for="yes">即時戰略(RTS) </label>
+            <input type="checkbox" name="Q2" id="PZG">
+            <label for="yes">益智遊戲(PZG) </label>
+            <p>
+                <input type="checkbox" name="Q2" id="FPS">
+                <label for="yes">射擊遊戲(FPS or TPS) </label>
+                <input type="checkbox" name="Q2" id="Q2_other">
+                <label for="yes">其他 </label>
+            </p>
+        </p>
+    </p>
+
+    <p>
+        <label for="suggest">第三題:給遊戲的建議(50字以內)</label>
+        <p>
+            <input type="text" name="suggest" id="suggest" style="height: 30px;width: 500px; ">
+        </p>
+    </p>
+
+    <p>
+        <span style="color: red">＊</span> <label>第四題:如果滿分是十分，請問您會給本問卷幾分？</label>
+        <input id="range" type="range" min="0" max="10" value="0" oninput="change()" onchange="change()">
+        <span id="value" style="background-color: skyblue">0分</span>
+    </p>
+
+    <script type='text/javascript'>
+        function change() {
+            var value = document.getElementById('range').value;
+            document.getElementById('value').innerHTML = value + '分';
+        }
+    </script>
+    <br><br><br>
+    <p>
+        <label for="gift">為感謝您填寫本問卷，在此提供以下獎品，供各位選擇。</label>
+    </p>
+
+    <form id="gift">
+        <select name="YourLocation">
+            <option value="" disabled selected hidden>請選擇獎品</option>
+            　<option value="1">不要瞎掰好嗎?</option>
+            　<option value="2">並沒有獎品!</option>
+            　<option value="3">口頭祝各位發大財!!</option>
+            　<option value="4">厚~氣氣氣氣氣氣</option>
+        </select>
+    </form>
+
+    <p>
+        <input type="submit" name="submit" value="點我提交 (我有功能 點我)"
+            onclick="javascript:alert('感謝您花費了許多時間填寫這份沒有作用的問卷!!!\n希望這種的問卷還有第二彈')">
+    </p>
+
+
+    <br><br><br>
+
+    <h2 id="introduce">烤魚戰士介紹</h2>
+
+    <p>
+        <a href="https://youtu.be/q4ATH8VdD78" target="_blank">
+            <p> 《烤魚戰士》遊戲介紹 </p>
+            <img src="image/Menu.PNG" alt="" width="480px" height="361px">　
+        </a>
+    </p>
+
+
+
+    <p>
+        <a href="https://www.youtube.com/watch?v=0uqiky2KHL0&feature=youtu.be" target="_blank">
+            <p>《烤魚戰士》遊玩過程</p>
+            <img src="image/Level1-1.PNG" alt="" width="480px" height="261px">
+        </a>
+    </p>
+
+
+
+    <p>
+        <a href="http://yeric.yuntech.edu.tw/unitydownload/GFW.apk" target="_blank">
+            <p>《烤魚戰士》下載鏈結</p>
+            <img src="image/Download.PNG" alt="" width="361px" height="480px">
+        </a>
+    </p>
+
+</body>
+
+</html>
